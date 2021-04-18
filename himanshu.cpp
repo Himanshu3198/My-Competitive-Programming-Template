@@ -1,9 +1,8 @@
-  
 /*
     author: himanshu3198
 */
 
-
+/* *********************************************************************************/
 #include<bits/stdc++.h>
 #include <iostream>
 #include <cmath>
@@ -33,8 +32,8 @@ using namespace std;
 #define sd(n) scanf("%lf",&n)
 #define ss(n) scanf("%s",n)
 #define pnl printf("\n")
-#define REP(i,n) for(int i=0;i<(n);i++)
-#define FOR(i,a,b) for(int i=(a);i<(b);i++)
+#define fr(i,n) for(int i=0;i<(n);i++)
+#define rep(i,a,b) for(int i=(a);i<(b);i++)
 #define FORR(i,n) for(int i=(n);i>=0;i--)
 #define DB(x) cout<<"\n"<<#x<<" = "<<(x)<<"\n";
 #define CL(a,b) memset(a,b,sizeof(a))
@@ -44,21 +43,26 @@ void swaps (char *x,char *y){char temp;temp=*x;*x=*y;*y=temp;}
 void swapi(int *a,int *b){int temp;temp=*a;*a=*b;*b=temp;}
 ULL gcd(ULL a,ULL b){if(a==0)return b;if(b==0)return a;if(a==1||b==1)return 1;
 if(a==b)return a;if(a>b)return gcd(b,a%b);else return gcd(a,b%a);}
+
+/* *************************************************************************************************** */
 #define SIZE 1000001
 
 int main()
 {
-    #ifdef debug
+    #ifdef himanshu3198
     freopen("input.txt","r",stdin);freopen("output.txt","w",stdout);
     freopen("log.txt", "w", stderr);
     #endif
-    int t,i,j;preprocess();
+    int t=1,i,j;
     scanf("%d",&t);
     while(t--)
     {
-       compute();
+       int n;
+       si(n);
+       
+      
     }//end while
-    #ifdef debug
+    #ifdef himanshu3198
     fprintf(stdout,"\nTIME: %.3lf sec\n", (double)clock()/(CLOCKS_PER_SEC));
     #endif
     return 0;
