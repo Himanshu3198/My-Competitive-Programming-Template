@@ -19,9 +19,9 @@ using namespace std;
 #define pb push_back
 #define all(x) (x).begin(), (x).end()
 #define MOD 1000000007LL
-#define LL long long
+#define ll long long
 #define ULL unsigned long long
-#define LD long double
+#define ld long double
 #define MAX(a,b) ((a)>(b)?(a):(b))
 #define MIN(a,b) ((a)<(b)?(a):(b))
 #define ABS(x) ((x)<0?-(x):(x))
@@ -38,32 +38,52 @@ using namespace std;
 #define DB(x) cout<<"\n"<<#x<<" = "<<(x)<<"\n";
 #define CL(a,b) memset(a,b,sizeof(a))
 #define GOLD ((1+sqrt(5))/2)
+#define fastio() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+
 const double PI=3.14159265358979323846264338327950288419716939937510582097494459230;
 void swaps (char *x,char *y){char temp;temp=*x;*x=*y;*y=temp;}
 void swapi(int *a,int *b){int temp;temp=*a;*a=*b;*b=temp;}
 ULL gcd(ULL a,ULL b){if(a==0)return b;if(b==0)return a;if(a==1||b==1)return 1;
 if(a==b)return a;if(a>b)return gcd(b,a%b);else return gcd(a,b%a);}
 
+
+bool checkPerfectSquare(long n){
+       if (ceil((double)sqrt(n)) == floor((double)sqrt(n))) {
+        // cout << "perfect square";
+        return true;
+    }
+    else {
+        // cout << "not a perfect square";
+        return false;
+    }
+}
 /* *************************************************************************************************** */
 #define SIZE 1000001
-
+   
 int main()
 {
+     
+     
     #ifdef himanshu3198
     freopen("input.txt","r",stdin);freopen("output.txt","w",stdout);
     freopen("log.txt", "w", stderr);
     #endif
-    int t=1,i,j;
+  
+
+    
+   int t=1;
     scanf("%d",&t);
     while(t--)
     {
        int n;
-       si(n);
+       cin>>n;
+   
        
       
     }//end while
     #ifdef himanshu3198
     fprintf(stdout,"\nTIME: %.3lf sec\n", (double)clock()/(CLOCKS_PER_SEC));
     #endif
+    fastio();
     return 0;
 }
