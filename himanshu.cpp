@@ -49,15 +49,85 @@ ULL gcd(ULL a,ULL b){if(a==0)return b;if(b==0)return a;if(a==1||b==1)return 1;
 if(a==b)return a;if(a>b)return gcd(b,a%b);else return gcd(a,b%a);}
 
 
-bool checkPerfectSquare(long n){
-       if (ceil((double)sqrt(n)) == floor((double)sqrt(n))) {
-        // cout << "perfect square";
-        return true;
+bool checkPerfectSquare(int n){
+       int temp=n;
+      int x=sqrt(n);
+    
+       if(x*x==temp){
+           return true;
+       }
+       else{
+           return false;
+       }
+}
+
+void merge(int *arr, int *L , int leftcount, int *R , int rightcount)
+{
+
+    int i = 0, j = 0, k = 0;
+    while (i < leftcount && j < rightcount)
+    {
+        if (L[i] < R[j])
+        {    // modifying arr if L[i] less than R[j] and increament i,k for next comparison
+            arr[k] = L[i];
+            k++;
+            i++;
+        }
+        else
+        {
+              // modifying arr if R[j] greater than L[i] and increament j,k for next comparison
+            arr[k] = R[j];
+            k++;
+            j++;
+        }
+
+
     }
-    else {
-        // cout << "not a perfect square";
-        return false;
+      // this case arrived when either i or j reach to max iteration
+    //   then remaining element can placed as it is i.e
+    //  arr[5,6,7]   L[11 12 13]
+
+        while (i < leftcount)
+        {
+            arr[k] = L[i];
+            k++;
+            i++;
+
+            //arr[5,6,7,11,12,13]
+        }
+        while (j < rightcount)
+        {
+            arr[k] = R[j];
+            k++;
+            j++;
+        }
+    
+}
+void mergeSort(int arr[], int n)
+{
+    int mid ;
+
+    if(n<2) {
+        return;
     }
+    mid = n / 2;
+
+  int L[mid];
+  int R[n-mid];
+
+    for (int i = 0; i < mid; i++)
+    {
+        L[i] = arr[i];
+    }
+
+    for (int i = mid; i < n; i++)
+    {
+        R[i - mid] = arr[i];
+    }
+
+    mergeSort(L, mid);
+    mergeSort(R, n - mid);
+    merge(arr, L, mid, R, n - mid);
 }
 
 int BinarySearch(int *arr,int n,int k){
