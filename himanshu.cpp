@@ -35,6 +35,8 @@ using namespace std;
 #define fr(i,n) for(int i=0;i<(n);i++)
 #define rep(i,a,b) for(int i=(a);i<(b);i++)
 #define FORR(i,n) for(int i=(n);i>=0;i--)
+#define fst first
+#define snd second
 #define DB(x) cout<<"\n"<<#x<<" = "<<(x)<<"\n";
 #define CL(a,b) memset(a,b,sizeof(a))
 #define GOLD ((1+sqrt(5))/2)
@@ -56,6 +58,29 @@ bool checkPerfectSquare(long n){
         // cout << "not a perfect square";
         return false;
     }
+}
+
+int BinarySearch(int *arr,int n,int k){
+
+
+    int l=0,r=n-1;
+
+
+    while(l<=r){
+         int mid=(l+r)/2;
+
+        if(arr[mid]==k){
+            return arr[mid];
+        }
+
+        if(k>arr[mid]){
+          l=mid+1;
+        }
+        else{
+            r=mid-1;
+        }
+    }
+    return -1;
 }
 /* *************************************************************************************************** */
 #define SIZE 1000001
